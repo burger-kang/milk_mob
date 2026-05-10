@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+@theme {
+  /* Palette — warm cream + deep ink + got-milk red.
+     Avoids default Tailwind grays/blues entirely. */
+  --color-paper: #faf6ef;
+  --color-paper-2: #f3ecdd;
+  --color-cream: #f1e9d9;
+  --color-ink: #16140f;
+  --color-ink-2: #2b261d;
+  --color-whisper: #6b6457;
+  --color-whisper-2: #8c8576;
+  --color-edge: #e2dccc;
+  --color-mood: #e73e2d;
+  --color-mood-soft: #f4a99e;
+  --color-honey: #e8b84b;
+  --color-leaf: #4f7c4a;
+  --color-night: #1a1a2c;
+
+  /* Type — Instrument Serif italic for display moments,
+     Geist for body. Both via next/font in layout.tsx. */
+  --font-display: var(--font-display), "Iowan Old Style", "Times New Roman", serif;
+  --font-sans: var(--font-sans), "Inter", system-ui, sans-serif;
+  --font-mono: var(--font-mono), ui-monospace, "Menlo", monospace;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 14px;
+  --radius-xl: 22px;
+
+  --shadow-paper: 0 1px 0 0 rgba(22, 20, 15, 0.04), 0 8px 24px -12px rgba(22, 20, 15, 0.12);
+  --shadow-lift: 0 1px 0 0 rgba(22, 20, 15, 0.04), 0 18px 40px -20px rgba(22, 20, 15, 0.22);
+}
+
+@layer base {
+  html, body {
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: var(--color-mood);
+    color: var(--color-paper);
+  }
+
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-thumb { background: var(--color-edge); border-radius: 999px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--color-whisper-2); }
+  ::-webkit-scrollbar-track { background: transparent; }
+
+  :focus-visible {
+    outline: 2px solid var(--color-ink);
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+
+  h1, h2, h3, h4 { letter-spacing: -0.012em; }
+
+  ::placeholder { color: var(--color-whisper-2); }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+    font-style: italic;
+    letter-spacing: -0.02em;
+  }
+  .text-balance { text-wrap: balance; }
+  .text-pretty { text-wrap: pretty; }
+
+  .ring-edge { box-shadow: inset 0 0 0 1px var(--color-edge); }
+  .ring-edge-strong { box-shadow: inset 0 0 0 1px rgba(22, 20, 15, 0.18); }
+
+  @keyframes paper-pulse {
+    0%, 100% { background-color: var(--color-cream); }
+    50% { background-color: var(--color-paper-2); }
+  }
+  .paper-pulse { animation: paper-pulse 1.6s ease-in-out infinite; }
+
+  /* Mob-specific gradient backdrops — intentional, not generic */
+  .grad-kitchen { background: radial-gradient(120% 100% at 0% 0%, #f9d27b 0%, #e98c5e 60%, #b04023 100%); }
+  .grad-skate { background: radial-gradient(120% 100% at 100% 0%, #5b6cff 0%, #2c2a4d 100%); }
+  .grad-beach { background: radial-gradient(120% 100% at 50% 100%, #ffd28a 0%, #ec8b5e 50%, #5694c7 100%); }
+  .grad-gym { background: linear-gradient(135deg, #1d1d1d 0%, #3c3a36 50%, #d6452f 100%); }
+  .grad-dance { background: radial-gradient(120% 100% at 50% 50%, #ff7ab8 0%, #b53a8e 60%, #2a1144 100%); }
+  .grad-pet { background: radial-gradient(120% 100% at 0% 100%, #f5d68b 0%, #c39a64 50%, #6f5739 100%); }
+  .grad-art { background: linear-gradient(135deg, #f1e9d9 0%, #e8b84b 50%, #6f3a26 100%); }
+  .grad-outdoors { background: radial-gradient(120% 100% at 100% 100%, #d6e9b6 0%, #4f7c4a 60%, #233a25 100%); }
+
+  /* Subtle film-grain overlay — for hero/mob cards */
+  .grain::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image: radial-gradient(circle at 20% 30%, rgba(255,255,255,0.06) 0, transparent 30%),
+                      radial-gradient(circle at 80% 70%, rgba(0,0,0,0.08) 0, transparent 35%);
+    mix-blend-mode: overlay;
+  }
+}

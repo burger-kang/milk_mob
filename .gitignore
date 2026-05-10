@@ -1,0 +1,42 @@
+# OS
+.DS_Store
+
+# Editor / IDE
+.vscode/
+.idea/
+
+# Python venv (legacy from earlier scratch work, not used by the app)
+.venv/
+
+# Claude Code project-local settings
+.claude/
+
+# Node / Next.js (web/)
+web/node_modules/
+web/.next/
+web/out/
+web/build/
+web/coverage/
+web/.pnp
+web/.pnp.*
+web/.yarn/*
+!web/.yarn/patches
+!web/.yarn/plugins
+!web/.yarn/releases
+!web/.yarn/versions
+web/next-env.d.ts
+web/*.tsbuildinfo
+
+# Logs
+**/npm-debug.log*
+**/yarn-debug.log*
+**/yarn-error.log*
+**/.pnpm-debug.log*
+
+# Env / secrets
+.env
+.env.*
+!.env.example
+
+# Vercel
+.vercel
