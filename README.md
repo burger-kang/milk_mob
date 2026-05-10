@@ -1,6 +1,6 @@
 # Got Milk Mob
 
-A web app demo for a TwelveLabs interview assignment: an AWS account team selling a brand-partnership marketing org on a "Got Milk?"-style viral video campaign. Users post tagged clips → the app validates them with TwelveLabs models → assigns each clip to a themed "Milk Mob" → drops the user into a TikTok-shaped feed of their mob.
+A web app demo: an AWS account team selling a brand-partnership marketing org on a "Got Milk?"-style viral video campaign. Users post tagged clips → the app validates them with video-understanding models → assigns each clip to a themed "Milk Mob" → drops the user into a TikTok-shaped feed of their mob.
 
 The web app **is** the deliverable — every demo beat is a navigable surface, not a slide.
 
@@ -54,7 +54,7 @@ The current build is a **frontend-first scaffold**. Every model call is faithful
 | `/v/[id]` "more like this" | Marengo image-similarity search | Same-mob slice of the static list. |
 | `/search` results | Marengo cross-modal search | Substring + tag match against the static list. |
 | `/operator/review` queue | Pegasus borderline reasoning + decisions log | 3 hand-authored items in `web/src/lib/videos.ts` (`REVIEW_QUEUE`). |
-| Sample video playback | TL HLS streams + thumbnails | Google's public sample MP4s from `gtv-videos-bucket`. |
+| Sample video playback | HLS streams + thumbnails | Google's public sample MP4s from `gtv-videos-bucket`. |
 | Authentication | Cognito / magic link | Stubbed — single identity ("the presenter"). |
 | `/whats-next` previews | All four | Static cards, no live model calls. |
 
@@ -68,7 +68,7 @@ The current build is a **frontend-first scaffold**. Every model call is faithful
 
 See [STATUS.md](STATUS.md) → "Tasks alive on disk" for the backend punch list:
 
-1. Wire the TwelveLabs Node SDK in Next.js API routes (server-side, API key never reaches the browser).
+1. Wire the video-AI Node SDK in Next.js API routes (server-side, API key never reaches the browser).
 2. Persist Video / Validation / MobAssignment / EmbeddingPointer to Postgres (Prisma proposed; SQLite acceptable for v1 scaffold).
 3. Replace mocked search with real Marengo `/search`.
 4. Replace simulated Pegasus streaming with real `analyze_stream()` calls.
@@ -86,11 +86,10 @@ This repo is doc-heavy by design — the assignment requires explaining *why* as
 | File | What it's for |
 |---|---|
 | [STATUS.md](STATUS.md) | **Read this first** if you're picking up after a break. Moment-in-time snapshot, what's built, immediate next step. |
-| [PROJECT.md](PROJECT.md) | The assignment, the two-audience goal (fake customer + TL interviewer), build phases, locked decisions. |
+| [PROJECT.md](PROJECT.md) | The assignment, the two-audience goal (fake customer + interviewer), build phases, locked decisions. |
 | [DEMO.md](DEMO.md) | The 8 demo beats with Mia/Jake/Sam personas. Beat-to-route mapping. |
 | [DESIGN.md](DESIGN.md) | The design bar — VC-startup-grade, Linear/Stripe/Vercel/Arc/Cash-App as references. The four sniff tests. |
-| [WEBAPP.md](WEBAPP.md) | TPM-audience spec — IA, surfaces, TL backbone flows, data model, tech stack, open product decisions. |
-| [TWELVELABS.md](TWELVELABS.md) | Reference notes on Marengo 3.0, Pegasus 1.5, endpoints, structured responses, Bedrock availability, demo pitfalls. |
+| [WEBAPP.md](WEBAPP.md) | TPM-audience spec — IA, surfaces, model backbone flows, data model, tech stack, open product decisions. |
 
 ## License
 
