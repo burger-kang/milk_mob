@@ -37,7 +37,7 @@ All 12 routes compile clean and return 200. Two zones in the top nav:
 | `/operator/review` | Three borderline submissions, Pegasus reasoning inline, approve/reject controls, decisions log. |
 | `/architecture` | 14-node Bedrock-only AWS diagram. Hover or click any node — side panel reacts. |
 | `/impact` | Slider with 5 named tiers (Soft launch → Generational moment), live spend recompute across Bedrock/CloudFront/S3/Lambda/OpenSearch/DynamoDB, SA-impact callout. |
-| `/whats-next` | 4 cards (platform ingestion, AI-detect, configurable taxonomy, operator analytics) with mocked previews. Built last per [DEMO.md](DEMO.md). |
+| `/whats-next` | 4 cards (platform ingestion, AI-detect, configurable taxonomy, operator analytics) with mocked previews. Built last per [DEMO.md](docs/DEMO.md). |
 
 ## What's mocked vs real
 
@@ -61,12 +61,12 @@ The current build is a **frontend-first scaffold**. Every model call is faithful
 ### What's real
 
 - The full **frontend stack**: Next.js 15 App Router, TypeScript, Tailwind v4 with custom design tokens, `motion/react` animations, Geist + Instrument Serif fonts, mob-specific gradient utilities, paper-pulse loading states.
-- The **information architecture** — every demo beat in [DEMO.md](DEMO.md) is a real route.
-- The **mock data shape** matches the planned DB schema in [WEBAPP.md](WEBAPP.md) (Video / Validation / MobAssignment / EmbeddingPointer).
+- The **information architecture** — every demo beat in [DEMO.md](docs/DEMO.md) is a real route.
+- The **mock data shape** matches the planned DB schema in [WEBAPP.md](docs/WEBAPP.md) (Video / Validation / MobAssignment / EmbeddingPointer).
 
 ### Next phase — wire it for real
 
-See [STATUS.md](STATUS.md) → "Tasks alive on disk" for the backend punch list:
+See [STATUS.md](docs/STATUS.md) → "Tasks alive on disk" for the backend punch list:
 
 1. Wire the video-AI Node SDK in Next.js API routes (server-side, API key never reaches the browser).
 2. Persist Video / Validation / MobAssignment / EmbeddingPointer to Postgres (Prisma proposed; SQLite acceptable for v1 scaffold).
@@ -85,11 +85,11 @@ This repo is doc-heavy by design — the assignment requires explaining *why* as
 
 | File | What it's for |
 |---|---|
-| [STATUS.md](STATUS.md) | **Read this first** if you're picking up after a break. Moment-in-time snapshot, what's built, immediate next step. |
-| [PROJECT.md](PROJECT.md) | The assignment, the two-audience goal (fake customer + interviewer), build phases, locked decisions. |
-| [DEMO.md](DEMO.md) | The 8 demo beats with Mia/Jake/Sam personas. Beat-to-route mapping. |
-| [DESIGN.md](DESIGN.md) | The design bar — VC-startup-grade, Linear/Stripe/Vercel/Arc/Cash-App as references. The four sniff tests. |
-| [WEBAPP.md](WEBAPP.md) | TPM-audience spec — IA, surfaces, model backbone flows, data model, tech stack, open product decisions. |
+| [STATUS.md](docs/STATUS.md) | **Read this first** if you're picking up after a break. Moment-in-time snapshot, what's built, immediate next step. |
+| [PROJECT.md](docs/PROJECT.md) | The assignment, the two-audience goal (fake customer + interviewer), build phases, locked decisions. |
+| [DEMO.md](docs/DEMO.md) | The 8 demo beats with Mia/Jake/Sam personas. Beat-to-route mapping. |
+| [DESIGN.md](docs/DESIGN.md) | The design bar — VC-startup-grade, Linear/Stripe/Vercel/Arc/Cash-App as references. The four sniff tests. |
+| [WEBAPP.md](docs/WEBAPP.md) | TPM-audience spec — IA, surfaces, model backbone flows, data model, tech stack, open product decisions. |
 
 ## License
 

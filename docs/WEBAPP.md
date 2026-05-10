@@ -2,9 +2,9 @@
 
 > **Audience:** technical PM. Use this to react, redirect, and align on v1 before scaffolding.
 > **Purpose of v1:** scaffolding + backend infra with the TwelveLabs SDK/API serving as the product backbone, plus the Phase 1 customer-facing surfaces working end-to-end.
-> See also: [README.md](README.md) (quick start + what's mocked), [PROJECT.md](PROJECT.md), [DESIGN.md](DESIGN.md), [TWELVELABS.md](TWELVELABS.md).
+> See also: [README.md](../README.md) (quick start + what's mocked), [PROJECT.md](PROJECT.md), [DESIGN.md](DESIGN.md), [TWELVELABS.md](TWELVELABS.md).
 
-> **What's actually shipped today (2026-05-09):** frontend-only scaffold. Every customer-facing surface is built and navigable, but every TL model call is simulated (`setTimeout`-driven streams, static mock arrays for search/feed). No SDK is wired yet; no API key required to run locally. Full mocked-vs-real table in [README.md](README.md#whats-mocked-vs-real). The "v1 Build Scope" section below describes the *target* for the next phase, not the current state.
+> **What's actually shipped today (2026-05-09):** frontend-only scaffold. Every customer-facing surface is built and navigable, but every TL model call is simulated (`setTimeout`-driven streams, static mock arrays for search/feed). No SDK is wired yet; no API key required to run locally. Full mocked-vs-real table in [README.md](../README.md#whats-mocked-vs-real). The "v1 Build Scope" section below describes the *target* for the next phase, not the current state.
 
 ## TL;DR
 

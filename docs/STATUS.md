@@ -1,6 +1,6 @@
 # Status — where we left off
 
-> **Read this first if you're picking up after a `/compact` or new session.** This is the moment-in-time snapshot. The stable plan lives in [PROJECT.md](PROJECT.md), [WEBAPP.md](WEBAPP.md), [DESIGN.md](DESIGN.md), [TWELVELABS.md](TWELVELABS.md), [DEMO.md](DEMO.md). For a clone-and-run intro, see [README.md](README.md).
+> **Read this first if you're picking up after a `/compact` or new session.** This is the moment-in-time snapshot. The stable plan lives in [PROJECT.md](PROJECT.md), [WEBAPP.md](WEBAPP.md), [DESIGN.md](DESIGN.md), [TWELVELABS.md](TWELVELABS.md), [DEMO.md](DEMO.md). For a clone-and-run intro, see [README.md](../README.md).
 
 ## Last updated
 2026-05-09 — after first frontend build pass, /upload sample-clip refactor, and initial GitHub push (`milk_mob`).
@@ -13,7 +13,7 @@ npm install      # only needed once
 npm run dev      # boots http://localhost:3000
 ```
 
-No API key required — the build is fully simulated. See [README.md](README.md#whats-mocked-vs-real) for the full mocked-vs-real table.
+No API key required — the build is fully simulated. See [README.md](../README.md#whats-mocked-vs-real) for the full mocked-vs-real table.
 
 ## What to click first
 
